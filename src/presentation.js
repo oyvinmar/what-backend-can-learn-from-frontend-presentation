@@ -7,11 +7,11 @@ import {
   Cite,
   Deck,
   Heading,
-  ListItem,
-  List,
+  // ListItem,
+  // List,
   Quote,
   Slide,
-  Text
+  // Text
 } from "spectacle";
 
 // Import theme
@@ -22,13 +22,13 @@ require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
 const theme = createTheme({
-  primary: "white",
-  secondary: "#1F2022",
-  tertiary: "#03A9FC",
-  quartenary: "#CECECE"
+  primary: "#009682",
+  secondary: "#424242",
+  tertiary: "#FDFDFD",
+  quartenary: "white"
 }, {
-  primary: "Montserrat",
-  secondary: "Helvetica"
+  primary: "-apple-system, BlinkMacSystemFont, Helvetica",
+  secondary: "-apple-system, BlinkMacSystemFont, Helvetica"
 });
 
 export default class Presentation extends React.Component {
@@ -36,35 +36,14 @@ export default class Presentation extends React.Component {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
         <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+          <Heading size={1} lineHeight={1.5} textColor="secondary">
+            What backend can learn from frontend
           </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>Typography</Heading>
-          <Heading size={1} textColor="secondary">Heading 1</Heading>
-          <Heading size={2} textColor="secondary">Heading 2</Heading>
-          <Heading size={3} textColor="secondary">Heading 3</Heading>
-          <Heading size={4} textColor="secondary">Heading 4</Heading>
-          <Heading size={5} textColor="secondary">Heading 5</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
+            <Quote>There is no such thing as a new idea.</Quote>
+            <Cite>Mark Twain</Cite>
           </BlockQuote>
         </Slide>
       </Deck>
