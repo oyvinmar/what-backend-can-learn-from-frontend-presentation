@@ -17,6 +17,7 @@ import {
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
+import notes from "./notes";
 
 // Require CSS
 require("normalize.css");
@@ -44,6 +45,7 @@ export default class Presentation extends React.Component {
         theme={theme}
       >
         <Slide transition={["zoom"]} bgColor="primary">
+          {notes["slide1"]()}
           <Heading size={1} lineHeight={1.5} textColor="secondary">
             What backend can learn from frontend
           </Heading>
