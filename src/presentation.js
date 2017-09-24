@@ -19,6 +19,7 @@ import {
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
+import preloader from 'spectacle/lib/utils/preloader';
 import notes from './notes';
 
 // Require CSS
@@ -31,8 +32,8 @@ window.Prism = Prism;
 
 const theme = createTheme(
   {
-    primary: '#009682',
-    secondary: '#424242',
+    primary: '#A1D1CA',
+    secondary: '#2D2926',
     tertiary: '#FDFDFD',
     quartenary: 'white',
   },
@@ -46,27 +47,30 @@ theme.screen.components.codePane.pre.fontSize = '1.4rem';
 const getNotes = slideName =>
   notes[slideName] ? notes[slideName]() : undefined;
 
+const video = {
+  hotReload: require('./video/hot-reload-example.mp4'),
+};
+
+preloader(video);
+
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck
-        transition={['zoom', 'slide']}
-        transitionDuration={500}
-        theme={theme}>
+      <Deck transition={['slide']} progress="None" theme={theme}>
         <Slide transition={['zoom']} bgColor="primary">
           {getNotes('slide1')}
           <Heading size={1} lineHeight={1.5} textColor="secondary">
             What backend can learn from frontend
           </Heading>
         </Slide>
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+        <Slide bgColor="secondary" textColor="primary">
           {getNotes('slide2')}
           <BlockQuote>
             <Quote>There is no such thing as a new idea.</Quote>
             <Cite>Mark Twain</Cite>
           </BlockQuote>
         </Slide>
-        <Slide transition={['fade']}>
+        <Slide>
           {getNotes('slide3')}
           <Heading size={3} textColor="secondary">
             (Developer) Tools
@@ -85,18 +89,18 @@ export default class Presentation extends React.Component {
             <ListItem>Mocha</ListItem>
           </List>
         </Slide>
-        <Slide transition={['fade']}>
+        <Slide>
           {getNotes('slide3')}
           <Heading size={1} lineHeight={1.5} textColor="secondary">
             No build system
           </Heading>
           <Appear>
-            <Heading size={1} textColor="tertiary">
+            <Heading fit size={1} textColor="secondary">
               (only scripts i.e. functions)
             </Heading>
           </Appear>
         </Slide>
-        <Slide transition={['fade']}>
+        <Slide>
           <Heading size={2} extColor="secondary">
             package.json scripts
           </Heading>
@@ -121,6 +125,14 @@ export default class Presentation extends React.Component {
             margin="20px auto"
             padding="0 1em"
           />
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">
+            Hot-reloading {'\u{1F525}'}
+          </Heading>
+        </Slide>
+        <Slide bgColor="secondary">
+          <video style={{ maxWidth: '100%' }} src={video.hotReload} autoPlay />
         </Slide>
       </Deck>
     );
