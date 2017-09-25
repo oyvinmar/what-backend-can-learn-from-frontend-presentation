@@ -14,7 +14,7 @@ import {
   Quote,
   Slide,
   CodePane,
-  // Text
+  Text,
 } from 'spectacle';
 
 // Import theme
@@ -127,12 +127,37 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide>
+          <Heading size={2} lineHeight="1.5" textColor="secondary">
+            Run a script
+          </Heading>
+          <CodePane
+            lang="bash"
+            source={`
+$ npm run build
+            `}
+            margin="20px auto"
+            padding="0 1em"
+          />
+        </Slide>
+        <Slide>
           <Heading size={1} fit textColor="secondary">
             Hot-reloading {'\u{1F525}'}
           </Heading>
         </Slide>
         <Slide bgColor="secondary">
           <video style={{ maxWidth: '100%' }} src={video.hotReload} autoPlay />
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">
+            Backend alternatives
+          </Heading>
+          <List>
+            <ListItem>Python, Ruby, Groovy, etc.</ListItem>
+            <ListItem>Jrebel, Intellij, etc.</ListItem>
+          </List>
+          <Appear>
+            <Text textAlign="left">Missing the browser integration part.</Text>
+          </Appear>
         </Slide>
       </Deck>
     );
