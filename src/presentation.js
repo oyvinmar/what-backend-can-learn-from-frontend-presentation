@@ -159,6 +159,80 @@ $ npm run build
             <Text textAlign="left">Missing the browser integration part.</Text>
           </Appear>
         </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">
+            Jest watch video
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">
+            Snapshot Testing {'\u{1F4F8}'}
+          </Heading>
+        </Slide>
+        <Slide>
+          <CodePane
+            lang="javascript"
+            source={`
+expect(object).toEqual(?)
+            `}
+            margin="20px auto"
+            padding="0 1em"
+          />
+        </Slide>
+        <Slide>
+          <CodePane
+            lang="javascript"
+            source={`
+// expect(object).toEqual(?);
+console.log(object);
+// ["Urge", "Sprite", "Fanta" ]
+            `}
+            margin="20px auto"
+            padding="0 1em"
+          />
+        </Slide>
+        <Slide>
+          <CodePane
+            lang="javascript"
+            source={`
+expect(object).toEqual([
+  "Urge",
+  "Sprite",
+  "Fanta"
+]);
+            `}
+            margin="20px auto"
+            padding="0 1em"
+          />
+        </Slide>
+        <Slide>
+          <CodePane
+            lang="javascript"
+            source={`
+expect(object).toMatchSnapshot();
+            `}
+            margin="20px auto"
+            padding="0 1em"
+          />
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">
+            Write snapshot video
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">
+            Update snapshot video
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit lineHeight="2" textColor="secondary">
+            Backend alternatives
+          </Heading>
+          <Heading textAlign="center" textColor="secondary">
+            ?
+          </Heading>
+        </Slide>
       </Deck>
     );
   }
