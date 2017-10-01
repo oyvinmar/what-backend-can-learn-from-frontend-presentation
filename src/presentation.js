@@ -51,12 +51,21 @@ const video = {
   hotReload: require('./video/hot-reload-example.mp4'),
 };
 
+const images = {
+  prettierLint: require('./images/prettier_lint.png'),
+  prettierFormat: require('./images/prettier_format.png'),
+};
+
 preloader(video);
 
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={['slide']} progress="None" theme={theme}>
+      <Deck
+        transition={['slide']}
+        progress="None"
+        theme={theme}
+        controls={false}>
         <Slide transition={['zoom']} bgColor="primary">
           {getNotes('slide1')}
           <Heading size={1} lineHeight={1.5} textColor="secondary">
@@ -144,7 +153,7 @@ $ npm run build
             Hot-reloading {'\u{1F525}'}
           </Heading>
         </Slide>
-        <Slide bgColor="secondary">
+        <Slide bgColor="secondary" className="slide-content--video">
           <video style={{ maxWidth: '100%' }} src={video.hotReload} autoPlay />
         </Slide>
         <Slide>
@@ -179,7 +188,7 @@ expect(object).toEqual(?)
             padding="0 1em"
           />
         </Slide>
-        <Slide>
+        <Slide transition="fade">
           <CodePane
             lang="javascript"
             source={`
@@ -191,7 +200,7 @@ console.log(object);
             padding="0 1em"
           />
         </Slide>
-        <Slide>
+        <Slide transition="fade">
           <CodePane
             lang="javascript"
             source={`
@@ -205,7 +214,7 @@ expect(object).toEqual([
             padding="0 1em"
           />
         </Slide>
-        <Slide>
+        <Slide transition="fade">
           <CodePane
             lang="javascript"
             source={`
@@ -232,6 +241,52 @@ expect(object).toMatchSnapshot();
           <Heading textAlign="center" textColor="secondary">
             ?
           </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">
+            Prettier{'\u{2728}'}
+          </Heading>
+        </Slide>
+        <Slide bgColor="secondary" textColor="primary">
+          <BlockQuote>
+            <Quote>An opinionated Code Formatter</Quote>
+          </BlockQuote>
+        </Slide>
+        <Slide
+          className="slide__bg-image"
+          bgSize="contain"
+          bgRepeat="no-repeat"
+          bgColor="#2d2d2d"
+          bgImage={images.prettierLint}
+        />
+        <Slide
+          className="slide__bg-image"
+          bgSize="contain"
+          bgRepeat="no-repeat"
+          bgColor="#2d2d2d"
+          bgImage={images.prettierFormat}
+        />
+        <Slide bgColor="secondary" className="slide-content--video">
+          <video style={{ maxWidth: '100%' }} src={video.hotReload} autoPlay />
+        </Slide>
+        <Slide>
+          <Heading size={3} textColor="secondary">
+            Why
+          </Heading>
+          <List>
+            <ListItem>No manual (time consuming) formatting</ListItem>
+            <ListItem>Stop all debates over style</ListItem>
+            <ListItem>Tremendous benefit for newcomers to a codebase</ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">
+            Backend alternatives
+          </Heading>
+          <List>
+            <ListItem>gofmt (for Go)</ListItem>
+            <ListItem>refmt (for Reason)</ListItem>
+          </List>
         </Slide>
       </Deck>
     );
