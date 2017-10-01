@@ -49,6 +49,8 @@ const getNotes = slideName =>
 
 const video = {
   hotReload: require('./video/hot-reload-example.mp4'),
+  writeSnapshot: require('./video/write_snapshot.mp4'),
+  updateSnapshot: require('./video/update_snapshot.mp4'),
   prettierEditorExample: require('./video/prettier_editor_example.mp4'),
   prettierEditorJsxExample: require('./video/prettier_editor_jsx_example.mp4'),
 };
@@ -59,6 +61,7 @@ const images = {
 };
 
 preloader(video);
+preloader(images);
 
 export default class Presentation extends React.Component {
   render() {
@@ -226,15 +229,19 @@ expect(object).toMatchSnapshot();
             padding="0 1em"
           />
         </Slide>
-        <Slide>
-          <Heading size={1} fit textColor="secondary">
-            Write snapshot video
-          </Heading>
+        <Slide bgColor="secondary" className="slide-content--video">
+          <video
+            style={{ maxWidth: '100%' }}
+            src={video.writeSnapshot}
+            autoPlay
+          />
         </Slide>
-        <Slide>
-          <Heading size={1} fit textColor="secondary">
-            Update snapshot video
-          </Heading>
+        <Slide bgColor="secondary" className="slide-content--video">
+          <video
+            style={{ maxWidth: '100%' }}
+            src={video.updateSnapshot}
+            autoPlay
+          />
         </Slide>
         <Slide>
           <Heading size={1} fit lineHeight="2" textColor="secondary">
