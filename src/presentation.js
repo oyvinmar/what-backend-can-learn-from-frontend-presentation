@@ -49,6 +49,8 @@ const getNotes = slideName =>
 
 const video = {
   hotReload: require('./video/hot-reload-example.mp4'),
+  prettierEditorExample: require('./video/prettier_editor_example.mp4'),
+  prettierEditorJsxExample: require('./video/prettier_editor_jsx_example.mp4'),
 };
 
 const images = {
@@ -267,7 +269,18 @@ expect(object).toMatchSnapshot();
           bgImage={images.prettierFormat}
         />
         <Slide bgColor="secondary" className="slide-content--video">
-          <video style={{ maxWidth: '100%' }} src={video.hotReload} autoPlay />
+          <video
+            style={{ maxWidth: '100%' }}
+            src={video.prettierEditorExample}
+            autoPlay
+          />
+        </Slide>
+        <Slide bgColor="secondary" className="slide-content--video">
+          <video
+            style={{ maxWidth: '100%' }}
+            src={video.prettierEditorJsxExample}
+            autoPlay
+          />
         </Slide>
         <Slide>
           <Heading size={3} textColor="secondary">
@@ -275,7 +288,7 @@ expect(object).toMatchSnapshot();
           </Heading>
           <List>
             <ListItem>No manual (time consuming) formatting</ListItem>
-            <ListItem>Stop all debates over style</ListItem>
+            <ListItem>Stops all debates over style</ListItem>
             <ListItem>Tremendous benefit for newcomers to a codebase</ListItem>
           </List>
         </Slide>
