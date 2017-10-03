@@ -50,6 +50,7 @@ const getNotes = slideName =>
 const video = {
   hotReload: require('./video/hot-reload-example.mp4'),
   writeSnapshot: require('./video/write_snapshot.mp4'),
+  jestWatch: require('./video/jest_watch.mp4'),
   updateSnapshot: require('./video/update_snapshot.mp4'),
   prettierEditorExample: require('./video/prettier_editor_example.mp4'),
   prettierEditorJsxExample: require('./video/prettier_editor_jsx_example.mp4'),
@@ -173,10 +174,8 @@ $ npm run build
             <Text textAlign="left">Missing the browser integration part.</Text>
           </Appear>
         </Slide>
-        <Slide>
-          <Heading size={1} fit textColor="secondary">
-            Jest watch video
-          </Heading>
+        <Slide bgColor="secondary" className="slide-content--video">
+          <video style={{ maxWidth: '100%' }} src={video.jestWatch} autoPlay />
         </Slide>
         <Slide>
           <Heading size={1} fit textColor="secondary">
@@ -252,8 +251,8 @@ expect(object).toMatchSnapshot();
           </Heading>
         </Slide>
         <Slide>
-          <Heading size={1} fit textColor="secondary">
-            Prettier{'\u{2728}'}
+          <Heading size={1} textColor="secondary">
+            Prettier {'\u{2728}'}
           </Heading>
         </Slide>
         <Slide bgColor="secondary" textColor="primary">
