@@ -1,5 +1,4 @@
 import React from 'react';
-import Prism from 'prismjs';
 
 import {
   BlockQuote,

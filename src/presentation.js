@@ -19,6 +19,8 @@ import {
 
 // Import theme
 import createPrettierSlides from './prettier';
+import createSnapshotSlides from './snapshot';
+import createHotReloadSlides from './hotreload';
 import createTheme from 'spectacle/lib/themes/default';
 import preloader from 'spectacle/lib/utils/preloader';
 import notes from './notes';
@@ -65,6 +67,8 @@ const images = {
 preloader(video);
 preloader(images);
 const prettierSlides = createPrettierSlides(images, video);
+const snapshotSlides = createSnapshotSlides(images, video);
+const hotReloadSlides = createHotReloadSlides(images, video);
 
 export default class Presentation extends React.Component {
   render() {
@@ -156,102 +160,12 @@ $ npm run build
             padding="0 1em"
           />
         </Slide>
-        <Slide>
-          <Heading size={1} fit textColor="secondary">
-            Hot-reloading {'\u{1F525}'}
-          </Heading>
-        </Slide>
-        <Slide bgColor="secondary" className="slide-content--video">
-          <video style={{ maxWidth: '100%' }} src={video.hotReload} autoPlay />
-        </Slide>
-        <Slide>
-          <Heading size={1} fit textColor="secondary">
-            Backend alternatives
-          </Heading>
-          <List>
-            <ListItem>Python, Ruby, Groovy, etc.</ListItem>
-            <ListItem>Jrebel, Intellij, etc.</ListItem>
-          </List>
-          <Appear>
-            <Text textAlign="left">Missing the browser integration part.</Text>
-          </Appear>
-        </Slide>
-        <Slide bgColor="secondary" className="slide-content--video">
-          <video style={{ maxWidth: '100%' }} src={video.jestWatch} autoPlay />
-        </Slide>
-        <Slide>
-          <Heading size={1} fit textColor="secondary">
-            Snapshot Testing {'\u{1F4F8}'}
-          </Heading>
-        </Slide>
-        <Slide>
-          <CodePane
-            lang="javascript"
-            source={`
-expect(object).toEqual(?)
-            `}
-            margin="20px auto"
-            padding="0 1em"
-          />
-        </Slide>
-        <Slide transition="fade">
-          <CodePane
-            lang="javascript"
-            source={`
-// expect(object).toEqual(?);
-console.log(object);
-// ["Urge", "Sprite", "Fanta" ]
-            `}
-            margin="20px auto"
-            padding="0 1em"
-          />
-        </Slide>
-        <Slide transition="fade">
-          <CodePane
-            lang="javascript"
-            source={`
-expect(object).toEqual([
-  "Urge",
-  "Sprite",
-  "Fanta"
-]);
-            `}
-            margin="20px auto"
-            padding="0 1em"
-          />
-        </Slide>
-        <Slide transition="fade">
-          <CodePane
-            lang="javascript"
-            source={`
-expect(object).toMatchSnapshot();
-            `}
-            margin="20px auto"
-            padding="0 1em"
-          />
-        </Slide>
-        <Slide bgColor="secondary" className="slide-content--video">
-          <video
-            style={{ maxWidth: '100%' }}
-            src={video.writeSnapshot}
-            autoPlay
-          />
-        </Slide>
-        <Slide bgColor="secondary" className="slide-content--video">
-          <video
-            style={{ maxWidth: '100%' }}
-            src={video.updateSnapshot}
-            autoPlay
-          />
-        </Slide>
-        <Slide>
-          <Heading size={1} fit lineHeight="2" textColor="secondary">
-            Backend alternatives
-          </Heading>
-          <Heading textAlign="center" textColor="secondary">
-            ?
-          </Heading>
-        </Slide>
+        {hotReloadSlides.map((slide, i) =>
+          React.cloneElement(slide, { key: i }),
+        )}
+        {snapshotSlides.map((slide, i) =>
+          React.cloneElement(slide, { key: i }),
+        )}
         {prettierSlides.map((slide, i) =>
           React.cloneElement(slide, { key: i }),
         )}
