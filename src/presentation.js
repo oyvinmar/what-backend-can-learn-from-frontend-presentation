@@ -21,6 +21,7 @@ import {
 import createPrettierSlides from './prettier';
 import createSnapshotSlides from './snapshot';
 import createHotReloadSlides from './hotreload';
+import createBabelSlides from './babel';
 import createTheme from 'spectacle/lib/themes/default';
 import preloader from 'spectacle/lib/utils/preloader';
 import notes from './notes';
@@ -69,6 +70,7 @@ preloader(images);
 const prettierSlides = createPrettierSlides(images, video);
 const snapshotSlides = createSnapshotSlides(images, video);
 const hotReloadSlides = createHotReloadSlides(images, video);
+const babelSlides = createBabelSlides(images, video);
 
 export default class Presentation extends React.Component {
   render() {
@@ -160,6 +162,7 @@ $ npm run build
             padding="0 1em"
           />
         </Slide>
+        {babelSlides.map((slide, i) => React.cloneElement(slide, { key: i }))}
         {hotReloadSlides.map((slide, i) =>
           React.cloneElement(slide, { key: i }),
         )}
