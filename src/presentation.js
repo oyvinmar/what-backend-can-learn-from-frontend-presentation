@@ -14,7 +14,6 @@ import {
   Quote,
   Slide,
   CodePane,
-  Text,
 } from 'spectacle';
 
 // Import theme

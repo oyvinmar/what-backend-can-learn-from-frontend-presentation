@@ -1,16 +1,6 @@
 import React from 'react';
 
-import {
-  BlockQuote,
-  Deck,
-  Heading,
-  ListItem,
-  Appear,
-  List,
-  Quote,
-  Slide,
-  Text,
-} from 'spectacle';
+import { BlockQuote, Heading, ListItem, List, Quote, Slide } from 'spectacle';
 
 export default (images, video) => [
   <Slide>
