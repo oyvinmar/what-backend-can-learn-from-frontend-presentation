@@ -1,17 +1,12 @@
 import React from 'react';
 
 import {
-  Appear,
-  BlockQuote,
   CodePane,
-  Deck,
   Layout,
   Fill,
-  Fit,
   Heading,
   List,
   ListItem,
-  Quote,
   Slide,
   S,
   Text,
@@ -41,8 +36,8 @@ export default (images, video) => [
           source={`
 const name = "Bobby Tables";
 const time = "today";
-\`Hello $\{name\},
-  how are you $\{time\}?\`
+\`Hello $\{name},
+  how are you $\{time}?\`
   `}
           margin="20px 5px 20px auto"
           padding="0 1em"
@@ -90,14 +85,13 @@ var odds = evens.map(
   }
 );
     `}
-          margin="20px auto"
           margin="20px auto 20px 5px"
           padding="0 1em"
         />
       </Fill>
     </Layout>
   </Slide>,
-  <Slide maxWidth="none">
+  <Slide maxWidth="none" className="fontSize-13">
     <Heading size={3} textColor="secondary">
       Destructuring
     </Heading>
@@ -108,9 +102,9 @@ var odds = evens.map(
           fontSize="1.3rem !important"
           source={`
 const name = {
-  nickName: 'Little Bobby Tables',
-  firstName: \`Robert ')\`,
-  lastName: 'DROP TABLE Students;--',
+  nickName: "Little Bobby Tables",
+  firstName: "Robert ')",
+  lastName: "DROP TABLE Students;--",
 }
 
 const {firstName, lastName} = name;
@@ -121,13 +115,12 @@ const {firstName, lastName} = name;
       </Fill>
       <Fill>
         <CodePane
-          fontSize="1.3rem !important"
           lang="javascript"
           source={`
 var name = {
-  nickName: 'Little Bobby Tables',
-  firstName: 'Robert \')',
-  lastName: 'DROP TABLE Students;--'
+  nickName: "Little Bobby Tables",
+  firstName: "Robert \\')",
+  lastName: "DROP TABLE Students;--"
 };
 
 var firstName = name.firstName,
@@ -139,18 +132,78 @@ var firstName = name.firstName,
       </Fill>
     </Layout>
   </Slide>,
-  <Slide bgColor="secondary" textColor="primary">
-    <BlockQuote>
-      <Quote>
-        We usually name it a "compiler" when it produces a lower-level output
-        than the input was
-      </Quote>
-    </BlockQuote>
+  <Slide>
+    <Heading size={3} textColor="secondary">
+      Classes
+    </Heading>
+    <CodePane
+      lang="javascript"
+      source={`
+class Rectangle extends Polygon {
+  constructor(height, width) {
+    super(height, width);
+    this.name = 'Rectangle';
+  }
+
+  sayMyName() {
+    console.log('Sup! My name is ', this.name + '.');
+    super.sayHistory();
+  }
+}
+    `}
+      margin="20px auto"
+      padding="0 1em"
+    />
+  </Slide>,
+  <Slide maxHeight="none">
+    <CodePane
+      lang="javascript"
+      source={`
+var Rectangle = function (_Polygon) {
+  _inherits(Rectangle, _Polygon);
+
+  function Rectangle(height, width) {
+    _classCallCheck(this, Rectangle);
+    var _this3 = _possibleConstructorReturn(this, (Rectangle.__proto__ || Object.getPrototypeOf(Rectangle)).call(this, height, width));
+    _this3.name = 'Rectangle';
+    return _this3;
+  }
+
+  _createClass(Rectangle, [{
+    key: 'sayMyName',
+    value: function sayMyName() {
+      console.log('Sup! My name is ', this.name + '.');
+      _get(Rectangle.prototype.__proto__ || Object.getPrototypeOf(Rectangle.prototype), 'sayHistory', this).call(this);
+    }
+  }]);
+
+  return Rectangle;
+}(Polygon);
+    `}
+      margin="20px auto"
+      padding="0 1em"
+    />
+  </Slide>,
+  <Slide bgColor="secondary">
+    <Text textSize="2.9rem" lineHeight={1.4} textColor="primary">
+      We usually name it a "compiler" when it produces a lower-level output than
+      the input was.
+    </Text>
   </Slide>,
   <Slide>
     <Heading size={3} textColor="secondary">
       Babel is a <S type="strikethrough">Transpiler</S> Compiler
     </Heading>
+  </Slide>,
+  <Slide>
+    <Heading size={3} textColor="secondary">
+      Benefits
+    </Heading>
+    <List>
+      <ListItem>Can use new features early</ListItem>
+      <ListItem>Prevents stagnation</ListItem>
+      <ListItem>Userland can influence language direction</ListItem>
+    </List>
   </Slide>,
   <Slide>
     <Heading size={1} fit lineHeight="2" textColor="secondary">

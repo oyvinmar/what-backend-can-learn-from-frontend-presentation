@@ -3,3 +3,7 @@
   max-width: 90% !important;
   // padding: 0 !important;
 }
+
+.fontSize-13 pre {
+  font-size: 1.3rem !important;
+}

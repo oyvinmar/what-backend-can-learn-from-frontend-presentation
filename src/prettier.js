@@ -53,7 +53,7 @@ export default (images, video) => [
   </Slide>,
   <Slide>
     <Heading size={3} textColor="secondary">
-      Why
+      Benefits
     </Heading>
     <List>
       <ListItem>No manual (time consuming) formatting</ListItem>
