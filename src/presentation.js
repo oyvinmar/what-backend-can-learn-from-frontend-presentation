@@ -171,6 +171,22 @@ $ npm run build
         {prettierSlides.map((slide, i) =>
           React.cloneElement(slide, { key: i }),
         )}
+        <Slide>
+          <Heading size={3} textColor="secondary">
+            Other tools
+          </Heading>
+          <List>
+            <ListItem>ESLint</ListItem>
+            <ListItem>Codemod</ListItem>
+            <ListItem>Monorepo (Lerna, Yarn Workspaces)</ListItem>
+            <ListItem>Prepack</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={['spin', 'slide']}>
+          <Heading size={1} fit lineHeight={1.5} textColor="secondary">
+            Thanks for listening!
+          </Heading>
+        </Slide>
       </Deck>
     );
   }

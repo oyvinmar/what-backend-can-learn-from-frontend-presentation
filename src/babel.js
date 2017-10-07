@@ -203,6 +203,7 @@ var Rectangle = function (_Polygon) {
       <ListItem>Can use new features early</ListItem>
       <ListItem>Prevents stagnation</ListItem>
       <ListItem>Userland can influence language direction</ListItem>
+      <ListItem>Trivial to extend (i.e. JSX, Types, etc)</ListItem>
     </List>
   </Slide>,
   <Slide>
