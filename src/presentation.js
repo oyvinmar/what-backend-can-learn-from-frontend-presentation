@@ -62,6 +62,7 @@ const video = {
 const images = {
   prettierLint: require('./images/prettier_lint.png'),
   prettierFormat: require('./images/prettier_format.png'),
+  toolscloud: require('./images/toolscloud.svg'),
 };
 
 preloader(video);
@@ -97,20 +98,14 @@ export default class Presentation extends React.Component {
           <Heading size={3} textColor="secondary">
             (Developer) Tools
           </Heading>
-          <List>
-            <ListItem>Babel</ListItem>
-            <ListItem>Webpack</ListItem>
-            <ListItem>PostCSS</ListItem>
-            <ListItem>SASS</ListItem>
-            <ListItem>ESLint</ListItem>
-            <ListItem>Prettier</ListItem>
-            <ListItem>Uglify</ListItem>
-            <ListItem>Google Closure</ListItem>
-            <ListItem>Hot reloading</ListItem>
-            <ListItem>Jest</ListItem>
-            <ListItem>Mocha</ListItem>
-          </List>
         </Slide>
+        <Slide
+          className="slide__bg-image"
+          bgSize="contain"
+          bgRepeat="no-repeat"
+          bgColor="#2d2d2d"
+          bgImage={images.toolscloud}
+        />
         <Slide>
           {getNotes('slide3')}
           <Heading size={1} lineHeight={1.5} textColor="secondary">
@@ -121,6 +116,27 @@ export default class Presentation extends React.Component {
               (only scripts i.e. functions)
             </Heading>
           </Appear>
+        </Slide>
+        <Slide>
+          <Heading size={2} lineHeight="1.5" textColor="secondary">
+            Run a script
+          </Heading>
+          <CodePane
+            lang="bash"
+            source={`
+$ babel src -d out/server
+            `}
+            margin="20px auto"
+            padding="0 1em"
+          />
+          <CodePane
+            lang="bash"
+            source={`
+$ stylelint style/**/*.css
+            `}
+            margin="20px auto"
+            padding="0 1em"
+          />
         </Slide>
         <Slide>
           <Heading size={2} extColor="secondary">
@@ -143,19 +159,6 @@ export default class Presentation extends React.Component {
   "pretest": "npm run lint",
   "prettier": "node prettier.js write"
 },
-            `}
-            margin="20px auto"
-            padding="0 1em"
-          />
-        </Slide>
-        <Slide>
-          <Heading size={2} lineHeight="1.5" textColor="secondary">
-            Run a script
-          </Heading>
-          <CodePane
-            lang="bash"
-            source={`
-$ npm run build
             `}
             margin="20px auto"
             padding="0 1em"
