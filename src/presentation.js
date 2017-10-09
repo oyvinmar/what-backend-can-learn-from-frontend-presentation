@@ -104,10 +104,11 @@ export default class Presentation extends React.Component {
           bgSize="contain"
           bgRepeat="no-repeat"
           bgColor="#2d2d2d"
-          bgImage={images.toolscloud}
-        />
+          bgImage={images.toolscloud}>
+          {getNotes('slide4')}
+        </Slide>
         <Slide>
-          {getNotes('slide3')}
+          {getNotes('slide5')}
           <Heading size={1} lineHeight={1.5} textColor="secondary">
             No build system
           </Heading>
@@ -118,6 +119,7 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
         <Slide>
+          {getNotes('slide6')}
           <Heading size={2} lineHeight="1.5" textColor="secondary">
             Run a script
           </Heading>
@@ -139,6 +141,7 @@ $ stylelint style/**/*.css
           />
         </Slide>
         <Slide>
+          {getNotes('slide7')}
           <Heading size={2} extColor="secondary">
             package.json scripts
           </Heading>
