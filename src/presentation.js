@@ -47,9 +47,6 @@ const theme = createTheme(
 );
 theme.screen.components.codePane.pre.fontSize = '1.4rem';
 
-const getNotes = slideName =>
-  notes[slideName] ? notes[slideName]() : undefined;
-
 const video = {
   hotReload: require('./video/hot-reload-example.mp4'),
   writeSnapshot: require('./video/write_snapshot.mp4'),
@@ -81,20 +78,20 @@ export default class Presentation extends React.Component {
         theme={theme}
         controls={false}>
         <Slide transition={['zoom']} bgColor="primary">
-          {getNotes('slide1')}
+          {notes['slide1']}
           <Heading size={1} lineHeight={1.5} textColor="secondary">
             What backend can learn from frontend
           </Heading>
         </Slide>
         <Slide bgColor="secondary" textColor="primary">
-          {getNotes('slide2')}
+          {notes['slide2']}
           <BlockQuote>
             <Quote>There is no such thing as a new idea.</Quote>
             <Cite>Mark Twain</Cite>
           </BlockQuote>
         </Slide>
         <Slide>
-          {getNotes('slide3')}
+          {notes['slide3']}
           <Heading size={3} textColor="secondary">
             (Developer) Tools
           </Heading>
@@ -105,10 +102,10 @@ export default class Presentation extends React.Component {
           bgRepeat="no-repeat"
           bgColor="#2d2d2d"
           bgImage={images.toolscloud}>
-          {getNotes('slide4')}
+          {notes['slide4']}
         </Slide>
         <Slide>
-          {getNotes('slide5')}
+          {notes['slide5']}
           <Heading size={1} lineHeight={1.5} textColor="secondary">
             No build system
           </Heading>
@@ -119,7 +116,7 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
         <Slide>
-          {getNotes('slide6')}
+          {notes['slide6']}
           <Heading size={2} lineHeight="1.5" textColor="secondary">
             Run a script
           </Heading>
@@ -141,7 +138,7 @@ $ stylelint style/**/*.css
           />
         </Slide>
         <Slide>
-          {getNotes('slide7')}
+          {notes['slide7']}
           <Heading size={2} extColor="secondary">
             package.json scripts
           </Heading>
@@ -178,12 +175,13 @@ $ stylelint style/**/*.css
           React.cloneElement(slide, { key: i }),
         )}
         <Slide>
+          {notes['slide8']}
           <Heading size={3} textColor="secondary">
             Other tools
           </Heading>
           <List>
             <ListItem>ESLint</ListItem>
-            <ListItem>Codemod</ListItem>
+            <ListItem>jscodeshift (Codemod)</ListItem>
             <ListItem>Monorepo (Lerna, Yarn Workspaces)</ListItem>
             <ListItem>Prepack</ListItem>
           </List>
