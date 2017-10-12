@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { CodePane, Heading, Slide } from 'spectacle';
+import { CodePane, Heading, List, ListItem, Slide } from 'spectacle';
 import notes from './snapshotNotes';
 
 export default (images, video) => [
-  <Slide>
+  <Slide transition={['zoom']}>
     {notes['slide1']}
     <Heading size={1} fit textColor="secondary">
       Snapshot Testing {'\u{1F4F8}'}
     </Heading>
   </Slide>,
-  <Slide>
+  <Slide transition="fade">
     {notes['slide2']}
     <CodePane
       lang="javascript"
@@ -70,6 +70,17 @@ expect(object).toMatchSnapshot();
   </Slide>,
   <Slide>
     {notes['slide8']}
+    <Heading size={3} textColor="secondary">
+      Benefits
+    </Heading>
+    <List>
+      <ListItem>Supersimple regression testing</ListItem>
+      <ListItem>Easy to compare large object (i.e. React Components)</ListItem>
+      <ListItem>Makes tedious testing fun</ListItem>
+    </List>
+  </Slide>,
+  <Slide>
+    {notes['slide9']}
     <Heading size={1} fit lineHeight="2" textColor="secondary">
       Backend alternatives
     </Heading>

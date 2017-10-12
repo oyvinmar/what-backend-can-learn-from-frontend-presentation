@@ -5,7 +5,7 @@ import { BlockQuote, Heading, ListItem, List, Quote, Slide } from 'spectacle';
 import notes from './prettierNotes';
 
 export default (images, video) => [
-  <Slide>
+  <Slide transition="zoom">
     {notes['slide1']}
     <Heading size={1} textColor="secondary">
       Prettier {'\u{2728}'}

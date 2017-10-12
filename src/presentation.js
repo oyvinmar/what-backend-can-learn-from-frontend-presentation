@@ -183,8 +183,12 @@ $ stylelint style/**/*.css
             <ListItem>ESLint</ListItem>
             <ListItem>jscodeshift (Codemod)</ListItem>
             <ListItem>Monorepo (Lerna, Yarn Workspaces)</ListItem>
-            <ListItem>Prepack</ListItem>
           </List>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Heading size={1} lineHeight={1.5} textColor="primary">
+            Use Node.js on the backend
+          </Heading>
         </Slide>
         <Slide transition={['spin', 'slide']}>
           <Heading size={1} fit lineHeight={1.5} textColor="secondary">

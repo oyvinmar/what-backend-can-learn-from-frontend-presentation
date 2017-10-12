@@ -199,7 +199,7 @@ var Rectangle = function (_Polygon) {
     </Text>
   </Slide>,
   <Slide>
-    {notes['slide8']}}
+    {notes['slide8']}
     <Heading size={3} textColor="secondary">
       Babel is a <S type="strikethrough">Transpiler</S> Compiler
     </Heading>
