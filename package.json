@@ -6,6 +6,7 @@
     "prismjs": "^1.8.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "serve": "^6.2.0",
     "spectacle-scripts": "1.0.15"
   },
   "scripts": {
