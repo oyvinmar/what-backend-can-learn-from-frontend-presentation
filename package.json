@@ -10,7 +10,7 @@
     "spectacle-scripts": "1.0.15"
   },
   "homepage":
-    "http://oyvinmar.github.io/what-backend-can-learn-from-frontend-presentation",
+    "https://oyvinmar.github.io/what-backend-can-learn-from-frontend-presentation",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
