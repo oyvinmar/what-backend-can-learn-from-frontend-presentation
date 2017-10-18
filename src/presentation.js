@@ -23,7 +23,6 @@ import createHotReloadSlides from './hotreload';
 import createBabelSlides from './babel';
 import createTheme from 'spectacle/lib/themes/default';
 import preloader from 'spectacle/lib/utils/preloader';
-import notes from './notes';
 
 // Require CSS
 require('normalize.css');
@@ -62,8 +61,11 @@ const images = {
   toolscloud: require('./images/toolscloud.svg'),
 };
 
-preloader(video);
-preloader(images);
+const preload = () => {
+  preloader(video);
+  preloader(images);
+};
+
 const prettierSlides = createPrettierSlides(images, video);
 const snapshotSlides = createSnapshotSlides(images, video);
 const hotReloadSlides = createHotReloadSlides(images, video);
@@ -78,20 +80,21 @@ export default class Presentation extends React.Component {
         theme={theme}
         controls={false}>
         <Slide transition={['zoom']} bgColor="primary">
-          {notes['slide1']}
           <Heading size={1} lineHeight={1.5} textColor="secondary">
             What backend can learn from frontend
           </Heading>
+
+          <button href="#" onClick={preload}>
+            Preload video and images
+          </button>
         </Slide>
         <Slide bgColor="secondary" textColor="primary">
-          {notes['slide2']}
           <BlockQuote>
             <Quote>There is no such thing as a new idea.</Quote>
             <Cite>Mark Twain</Cite>
           </BlockQuote>
         </Slide>
         <Slide>
-          {notes['slide3']}
           <Heading size={3} textColor="secondary">
             (Developer) Tools
           </Heading>
@@ -101,11 +104,9 @@ export default class Presentation extends React.Component {
           bgSize="contain"
           bgRepeat="no-repeat"
           bgColor="#2d2d2d"
-          bgImage={images.toolscloud}>
-          {notes['slide4']}
-        </Slide>
+          bgImage={images.toolscloud}
+        />
         <Slide>
-          {notes['slide5']}
           <Heading size={1} lineHeight={1.5} textColor="secondary">
             No build system
           </Heading>
@@ -116,7 +117,6 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
         <Slide>
-          {notes['slide6']}
           <Heading size={2} lineHeight="1.5" textColor="secondary">
             Run a script
           </Heading>
@@ -138,7 +138,6 @@ $ stylelint style/**/*.css
           />
         </Slide>
         <Slide>
-          {notes['slide7']}
           <Heading size={2} extColor="secondary">
             package.json scripts
           </Heading>
@@ -175,7 +174,6 @@ $ stylelint style/**/*.css
           React.cloneElement(slide, { key: i }),
         )}
         <Slide>
-          {notes['slide8']}
           <Heading size={3} textColor="secondary">
             Other tools
           </Heading>

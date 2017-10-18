@@ -11,58 +11,20 @@ import {
   S,
   Text,
 } from 'spectacle';
-import notes from './babelNotes';
 
 export default (images, video) => [
   <Slide transition={['zoom']}>
-    {notes['slide1']}
     <Heading size={1} textColor="secondary">
       Babel {'\u{1F528}'}
     </Heading>
   </Slide>,
   <Slide>
-    {notes['slide2']}
     <Heading size={3} textColor="secondary">
       Transpiler
     </Heading>
     <Text>Lets use next generation JavaScript, today.</Text>
   </Slide>,
-  //   <Slide maxWidth="none">
-  //     <Heading size={3} textColor="secondary">
-  //       Template Strings
-  //     </Heading>
-  //     <Layout>
-  //       <Fill>
-  //         <CodePane
-  //           lang="javascript"
-  //           borderRight="5px solid black"
-  //           source={`
-  // const name = "Bobby Tables";
-  // const time = "today";
-  // \`Hello $\{name},
-  //   how are you $\{time}?\`
-  //   `}
-  //           margin="20px 5px 20px auto"
-  //           padding="0 1em"
-  //         />
-  //       </Fill>
-  //       <Fill>
-  //         <CodePane
-  //           lang="javascript"
-  //           source={`
-  // var name = "Bobby Tables";
-  // var time = "today";
-  // "Hello " + name +
-  // ", \\n  how are you " + time + "?";
-  //     `}
-  //           margin="20px auto 20px 5px"
-  //           padding="0 1em"
-  //         />
-  //       </Fill>
-  //     </Layout>
-  //   </Slide>,
   <Slide maxWidth="none">
-    {notes['slide3']}
     <Heading size={3} textColor="secondary">
       Arrow functions
     </Heading>
@@ -96,7 +58,6 @@ var odds = evens.map(
     </Layout>
   </Slide>,
   <Slide maxWidth="none" className="fontSize-13">
-    {notes['slide4']}
     <Heading size={3} textColor="secondary">
       Destructuring
     </Heading>
@@ -138,7 +99,6 @@ var firstName = name.firstName,
     </Layout>
   </Slide>,
   <Slide>
-    {notes['slide5']}
     <Heading size={3} textColor="secondary">
       Classes
     </Heading>
@@ -162,7 +122,6 @@ class Rectangle extends Polygon {
     />
   </Slide>,
   <Slide maxHeight="none">
-    {notes['slide6']}
     <CodePane
       lang="javascript"
       source={`
@@ -192,20 +151,17 @@ var Rectangle = function (_Polygon) {
     />
   </Slide>,
   <Slide bgColor="secondary">
-    {notes['slide7']}
     <Text textSize="2.9rem" lineHeight={1.4} textColor="primary">
       We usually name it a "compiler" when it produces a lower-level output than
       the input was.
     </Text>
   </Slide>,
   <Slide>
-    {notes['slide8']}
     <Heading size={3} textColor="secondary">
       Babel is a <S type="strikethrough">Transpiler</S> Compiler
     </Heading>
   </Slide>,
   <Slide>
-    {notes['slide9']}
     <Heading size={3} textColor="secondary">
       Benefits
     </Heading>
@@ -217,7 +173,6 @@ var Rectangle = function (_Polygon) {
     </List>
   </Slide>,
   <Slide>
-    {notes['slide10']}
     <Heading size={1} fit lineHeight="2" textColor="secondary">
       Backend alternatives
     </Heading>
